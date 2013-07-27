@@ -137,6 +137,17 @@ img  {
     float:left;
 }
 
+/* -------- SEARCH --------  */
+
+#s { 
+	color:  #00acee;;  
+	text-align: left;
+	cursor: pointer;
+	display: block; 
+	width: 90%; 
+}
+
+/* -------- CLEAR FLOATS -------- */
 .clear {
 	clear:both;
 }

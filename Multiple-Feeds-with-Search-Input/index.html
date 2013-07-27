@@ -13,7 +13,13 @@
 
 	<div id="twitter-feed-1" class="tweets"></div>
     <div id="twitter-feed-2" class="tweets"></div>
-    <div id="twitter-feed-3" class="tweets"></div>
+    
+    <div class="tweets">
+        <input id="s" results=5 type="search" name="s" value="Type keyword and press enter to search" />
+        <div id="twitter-feed-3">
+            
+        </div>
+    </div>
     <div class="clear"></div>
     
     
@@ -31,12 +37,18 @@
 				
 			});
 			
-			$('#twitter-feed-3').twitterFeed({
-				screenname: 'Digitalinc',
-				twitterprofile:'thisdigitalinc',
-				type: 'search',
-				q: 'dogs'
-				
+			$('#s').keypress(function (event) {
+			  if (event.which == 13) {
+				event.preventDefault();
+				$('#twitter-feed-3').twitterFeed({
+					screenname: 'Digitalinc',
+					twitterprofile:'thisdigitalinc',
+					type: 'search',
+					q: $('#s').val()
+					
+				});
+				return false;
+			  }
 			});
 		});
     
