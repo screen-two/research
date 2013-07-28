@@ -8,6 +8,8 @@ $.fn.twitterFeed = function(options) {
 	
  	 var settings = $.extend({
             // These are the defaults.
+			// Here, we're creating a collection of default values & merging them with the specified options by the user. 
+			// If the the user has not specified any, these defaults will be used. 
             displaylimit: 3,
             twitterprofile: "",
 			screenname: "",
@@ -21,6 +23,8 @@ $.fn.twitterFeed = function(options) {
 			q: ''
         }, options );
 		
+		// This is just me being lazy and not wanting to type settings. etc... I can clean this up later. 
+		
 		var displaylimit = settings.displaylimit;
 		var twitterprofile = settings.twitterprofile;
 		var screenname = settings.screenname;
@@ -31,13 +35,16 @@ $.fn.twitterFeed = function(options) {
 		var showtweetactions = settings.showtweetactions;
 		var showretweetindicator = settings.showtweetindicator;
 		
+		// Global HTML strings that will define what the feeds look like. This came with the tutorial, I hate inline styles so this can all come out and be replaced with CSS in another iteration. 
 		var headerHTML = '';
 		var loadingHTML = '';
-		var searchHeader ='';
+		
 	headerHTML += '<a href="https://twitter.com/" target="_blank"><img src="images/twitter-bird-light.png" width="34" style="float:left;padding:3px 12px 0px 6px" alt="twitter bird" /></a>';
 	headerHTML += '<h1>'+screenname+' <span style="font-size:13px"><a href="https://twitter.com/'+twitterprofile+'" target="_blank">@'+twitterprofile+'</a></span></h1>';
 	loadingHTML += '<div id="loading-container"><img src="images/ajax-loader.gif" width="32" height="32" alt="tweet loader" /></div>';
 	
+	
+	// This function takes in a tweet and adds the HREFs so the links will work. 
 	function addlinks(data) {
         //Add link to all http:// links within tweets
          data = data.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
@@ -54,7 +61,8 @@ $.fn.twitterFeed = function(options) {
         });
         return data;
     }
-     
+      
+	// This function takes the timestamp and puts it into a nice format
      
     function relative_time(time_value) {
       var values = time_value.split(" ");
@@ -82,7 +90,10 @@ $.fn.twitterFeed = function(options) {
         return shortdate;
       }
     }
-		
+	//END Timestamp Function
+	
+	// This is the jQuery function that applies our logic ot each element in the plugin selector 
+	// E.G. $(#twitter-feed-1, #twitter-feed-2, #twitter-feed-3).twitterFeed();
     return this.each(function() {
         
 		var tweetFeed = $(this);
