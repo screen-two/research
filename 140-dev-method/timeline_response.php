@@ -14,7 +14,7 @@ $connection = new tmhOAuth(array(
 
 // Get the timeline with the Twitter API
 $http_code = $connection->request('GET',$connection->url('1.1/statuses/user_timeline'), 
-	array('screen_name' => 'justinbieber',
+	array('screen_name' => 'imisaninja',
 		'count' => 100));
 			
 // Request was successful

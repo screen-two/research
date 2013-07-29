@@ -1,5 +1,10 @@
-<script src='jquery.min.js'></script>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Timeline Request</title>
+<link href="styles.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script>
 
 	jQuery(document).ready(function($) {
@@ -9,7 +14,7 @@
 			// Define the URL being called by Ajax
 			// This URL is for illustration only
 			// You MUST change it to call your server
-			url: 'http://books.140dev.com/ebook_js/code/timeline_response.php',
+			url: 'http://digitalinc.ie/140-dev-method/timeline_response.php',
 			
 			// Put the results into the display element
 			success: function(data){
@@ -23,6 +28,20 @@
 		})
 	});
 </script>
-	
-<strong>@Justin Bieber's Tweets:</strong><br/><br/>
+</head>
+<body>
+<section id="menu">
+  <ul>
+    <li><a href="index.html" >Home</a></li>
+        	<li><a href="ajax_request.html" >Ajax Request</a></li>
+            <li><a href="timeline_request.html" >Timeline Request</a></li>
+            <li><a href="search_request.html" >Search Request</a></li>
+            <li><a href="search_client.html" >Search Client</a></li>
+            <li><a href="tweet_template.html" >Tweet Template</a></li>
+  </ul>
+</section>
+<strong>Siobh&aacute;n's Tweets:</strong><br/>
+<br/>
 <span id='timeline_results'></span>
+</body>
+</html>
