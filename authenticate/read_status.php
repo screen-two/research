@@ -1,10 +1,9 @@
 <?php
 
-	require("twitteroauth/twitteroauth.php"); 
+require("twitteroauth/twitteroauth.php"); 
 	 
-	session_start();
+session_start();
 	if(!empty($_SESSION['username'])){  
-		
 		
 		$twitteroauth = new TwitterOAuth('oXRHpijPXqkmpI01vB3XKQ', 'EBxsXvSZaDeiN08kHHtWaiiZyiGOdpsIP0UGBwy2g', $_SESSION['oauth_token'], $_SESSION['oauth_secret']);  
 		
@@ -18,7 +17,5 @@
 	
 }	
 	
-	
-
 
 ?>
