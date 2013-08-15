@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    background:#e5e4e4;  
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	margin: 0;   
+}
+
+header {
+	background: #72b9b5;
+	max-width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	
+}
+
+header #header-left {
+	width: 80%;
+	float: left;
+	display: inline-block;
+}
+
+header #header-left img {
+	position: relative;
+	top: 19px;
+	left: 13px;
+}
+
+header #header-right {
+	display: inline-block;
+}
+
+#header-right ul {
+	margin: 0;
+	padding: 0;
+}
+
+#header-right ul li {
+	display: inline-block;
+	padding: 0 0 0 15px;
+}
+
+#header-right ul.home-icons {
+	list-style: none;
+}
+
+#header-right ul.home-icons .compose-tweet img {
+	position: relative;
+	top: 19px;
+	left: 11px;
+}
+
+#header-right ul.home-icons .add-feed img {
+	position: relative;
+	top: 19px;
+	left: 14px;
+}
+
+#header-right ul li.compose-tweet {
+	background: #64a3cf;
+	width: 100px;
+	height: 100px;
+}
+
+#header-right ul li.add-feed {
+	background: #e7995b;
+	width: 100px;
+	height: 100px;
+}
+
+#menu .menu-icon {
+	background: #e28891;
+	width: 100px;
+	height: 100px;
+}
+ 
+img  {
+    border:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;  
+	font-weight: 600;
+	
+}
+
+.clear {
+	clear: both;
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo img {
+	width: 100px;
+}
+
+/* -------- LOGIN SCREEN ------*/
+
+.login-wrapper {
+	width: 40%;
+	height: 200px;
+	background: #72b9b5 no-repeat;
+	margin: 10% auto;
+}
+
+.login-wrapper h3 {
+	color: #fff;
+	text-align: center;
+	font-weight: 400;
+	padding: 20px 0 0 0;
+
+}
+.twitter-login {
+	width: 70%;
+	background: #e28891;
+	text-align: center;
+	margin: 0 auto;
+	
+}
+
+.twitter-login-icon img {
+	width: 25px;
+	float: left;
+	vertical-align: middle;
+	padding: 10px 0 10px 20px;
+	
+	
+}
+
+.twitter-login form {
+	padding: 3px;
+	margin: 50px;
+}
+
+.twitter-submit {
+	font-family: 'Ubuntu', Arial, sans-serif;
+	font-size: 1.6em;
+	background: #e28891 no-repeat ;
+	color: #fff;
+	margin: 0 auto;
+	border: none;
+	padding: 0;
+	
+	
+}
+ 
+#divcontainer {
+  width: 900px;
+  height: 800px;
+      margin: 0 auto;
+      padding: 3px;
+  }
+
+#makeitmove {
+  
+  border: 1px solid orange;
+  cursor: move;
+  
+}
+
+.clear {
+	clear:both;
+}
+
