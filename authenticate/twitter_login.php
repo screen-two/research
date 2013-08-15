@@ -6,7 +6,7 @@
 	// The TwitterOAuth instance  
 $twitteroauth = new TwitterOAuth('oXRHpijPXqkmpI01vB3XKQ', 'EBxsXvSZaDeiN08kHHtWaiiZyiGOdpsIP0UGBwy2g');  
 // Requesting authentication tokens, the parameter is the URL we will be redirected to  
-$request_token = $twitteroauth->getRequestToken('http://localhost:8888/Screen2/twitter_oauth.php');  
+$request_token = $twitteroauth->getRequestToken('http://digitalinc.ie/authenticate/twitter_oauth.php');  
   
 // Saving them into the session  
 $_SESSION['oauth_token'] = $request_token['oauth_token'];  

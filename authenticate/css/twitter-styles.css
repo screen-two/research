@@ -40,19 +40,19 @@ header #header-right {
 }
 
 #header-right ul li.compose-tweet {
-	background: #64a3cf url('/images/twitter-icon.png') no-repeat fixed center;
+	background: #64a3cf;
 	width: 100px;
 	height: 100px;
 }
 
 #header-right ul li.add-feed {
-	background: #e7995b url('/images/add.png') no-repeat fixed center;
+	background: #e7995b;
 	width: 100px;
 	height: 100px;
 }
 
 #menu .menu-icon {
-	background: #e28891 url('/images/menu-icon.png') no-repeat fixed center;
+	background: #e28891;
 	width: 100px;
 	height: 100px;
 }
@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #fff;
 	text-align: center;
 	font-weight: 400;
+	padding: 20px 0 0 0;
 
 }
 .twitter-login {
@@ -98,8 +99,16 @@ h1, h2, h3, h4, h5, h6 {
 	
 }
 
-twitter-login-icon {
-	background: url('../images/twitter-icon.png') no-repeat;
+.twitter-login-icon img {
+	width: 25px;
+	float: left;
+	vertical-align: middle;
+	padding: 10px 0 10px 20px;
+}
+
+.twitter-login form {
+	padding: 3px;
+	margin: 50px;
 }
 
 .twitter-submit {
@@ -109,6 +118,7 @@ twitter-login-icon {
 	color: #fff;
 	margin: 0 auto;
 	border: none;
+	padding: 0;
 	
 	
 }
