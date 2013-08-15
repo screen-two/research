@@ -74,6 +74,44 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
 	text-align: center;
 }
+
+/* -------- LOGIN SCREEN ------*/
+
+.login-wrapper {
+	width: 40%;
+	height: 200px;
+	background: #72b9b5 no-repeat;
+	margin: 10% auto;
+}
+
+.login-wrapper h3 {
+	color: #fff;
+	text-align: center;
+	font-weight: 400;
+
+}
+.twitter-login {
+	width: 70%;
+	background: #e28891;
+	text-align: center;
+	margin: 0 auto;
+	
+}
+
+twitter-login-icon {
+	background: url('../images/twitter-icon.png') no-repeat;
+}
+
+.twitter-submit {
+	font-family: 'Ubuntu', Arial, sans-serif;
+	font-size: 1.6em;
+	background: #e28891 no-repeat ;
+	color: #fff;
+	margin: 0 auto;
+	border: none;
+	
+	
+}
  
 #loading-container {
     padding:16px 0px 16px 0px;
