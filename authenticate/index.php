@@ -4,14 +4,13 @@
   <head>
   <meta charset="UTF-8">
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+  
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script type="text/javascript" src="js/twitterfeed.js"></script>
   <script src="js/modernizr.custom.js"></script>
   
   <script>
-  $(document).ready(function(){
-  $("#makeitmove").draggable( {containment: "#divcontainer", scroll: false} );
-  });
+
   
   </script>
   <link href="./css/styles.css" rel="stylesheet" type="text/css" />
@@ -23,11 +22,33 @@
   <body>
 <header>
     <div id="header-left">
-    <div id="menu" class="main-navigation cbp-spmenu-push">
+    
         <div class="menu-icon">
-        <button id="showLeft"><img src="./images/menu-icon.png" alt="menu-icon" /></button>
+        <button id="showLeft"></button>
       </div>
-        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+      <!-- END menu-icon--> 
+
+  </div>
+    <!-- END header-left --> 
+    
+    
+    <div id="header-right">
+    <ul class="home-icons" >
+        <li class="compose-tweet"></li>
+        <li class="add-feed"></li>
+      </ul>
+    <!-- END home-icons-->
+    
+    <div class="clear"></div>
+  </div>
+  
+    <!-- END header-right --> 
+    
+  </header>
+  <!-- END header --> 
+  
+  <div id="menu" class="main-navigation cbp-spmenu-push">
+  <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
         
         <?php 
         if(!empty($_SESSION['username'])){  ?>
@@ -44,37 +65,29 @@
         </ul>
         <!-- END list menu-items -->
         
-        </nav>
+   </nav>
         <!-- END nav cbp-spmenu-s1 -->
-        
-      </div>
+</div>
     <!-- END main-navigation --> 
-    
-    
-  </div>
-    <!-- END header-left --> 
-    <!--<div class="logo"><img src="images/s2.png" alt="Screen&sup2;" /></div><!-- END logo-->
-    
-    <div id="header-right">
-    <ul class="home-icons" >
-        <li class="compose-tweet"><img src="./images/twitter-icon.png" alt="twitter-bird" /></li>
-        <li class="add-feed"><img src="./images/add.png" alt="twitter-bird" /></li>
-      </ul>
-    <!-- END home-icons-->
-    
-    <div class="clear"></div>
-  </div>
-    <!-- END header-right --> 
-    
-  </header>
-<!-- END header -->
+
+
 <?php 
-
-
 
 if(!empty($_SESSION['username'])){  ?>
 
-    <h2>OHai <?='@' . $_SESSION['username']; ?></h2> 
+    <div class="content-wrapper">
+    
+        <h2>OHai <?='@' . $_SESSION['username']; ?></h2> 
+        
+        
+    
+        <div id="col-1" class="tweets">One</div>
+        <div id="col-2" class="tweets">Two</div>
+        <div id="col-3" class="tweets">Three</div>
+        
+    </div>
+    <!-- END content-wrapper -->
+    <div class="clear"></div>
 <?php 
 } else {
  ?>
@@ -91,6 +104,9 @@ if(!empty($_SESSION['username'])){  ?>
 <!-- END login-wrapper -->
 
 <div class="clear"></div>
+
+
+
 <?php } ?>
 <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie --> 
 <script src="js/classie.js"></script> 
