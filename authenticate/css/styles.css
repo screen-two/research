@@ -21,7 +21,7 @@ header #header-left {
 	display: inline-block;
 }
 
-header #header-left img {
+header #header-left #menu .menu-icon img {
 	position: relative;
 	top: 19px;
 	left: 13px;
@@ -170,20 +170,22 @@ h1, h2, h3, h4, h5, h6 {
 
 header #header-left .profile {
 	background: none repeat scroll 0 0 #E28891;
+	text-align: center;
 }
 
 header #header-left p {
-	text-align: center;
+	
 	
 }
 
 header #header-left img#avatar {
-	-webkit-border-radius: 50%px;
-	-moz-border-radius: 50%px;
+	-webkit-border-radius: 50% ;
+	-moz-border-radius: 50%;
 	border-radius: 50%;
 	border: 2px solid #72B9B5;
 	width: 100px;
 	height: 100px;
+	margin: 40px 0 0 0;
 	
 }
 
@@ -193,26 +195,26 @@ header #header-left img#avatar {
 
 .counts p {
 	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;  
-	font-weight: 400;
+	font-weight: 300;
 	font-size: .9em;	
 	color: #fff;
 	display: inline-block;
 	text-align: center;
 	margin: 0 auto;
-	padding: 0 3px;
+	padding: 10px 3px;
 }
 
 .counts span.number-of-tweets p {
-	border-top: 2px solid #72B9B5;
+	border-top: 4px solid #72B9B5;
 }
 
 .counts span.number-following p {
-	border-top: 2px solid #e7995b;
+	border-top: 4px solid #e7995b;
 }
 
 
 .counts span.number-of-followers p {
-	border-top: 2px solid #64a3cf;
+	border-top: 4px solid #64a3cf;
 }
 
 
