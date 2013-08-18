@@ -1,11 +1,47 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/* ---- //// BEGIN GENERAL PAGE STYLES ////---- */
+
 body {
     background:#e5e4e4;  
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 	margin: 0;   
 }
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;  
+	font-weight: 600;	
+}
+
+
+.clear {
+	clear: both;
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo img {
+	width: 100px;
+}
+
+img  {
+    border:none;
+}
+
+
+/* ---- //// END GENERAL PAGE STYLES ////---- */
+
+
+
+
+
+
+
+/* ---- //// BEGIN HEADER STYLES ////---- */
 
 header {
 	background: #72b9b5;
@@ -74,31 +110,23 @@ header #header-right {
 	width: 100px;
 	height: 100px;
 }
+
+/* ---- //// END HEADER STYLES ////---- */
+
+
+
  
-img  {
-    border:none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;  
-	font-weight: 600;	
-}
+ 
 
 
 
-.clear {
-	clear: both;
-}
 
-.logo {
-	text-align: center;
-}
 
-.logo img {
-	width: 100px;
-}
 
-/* -------- LOGIN SCREEN ------*/
+
+
+
+/* ---- //// BEGIN LOGIN WITH TWITTER STYLES ////---- */
 
 .login-wrapper {
 	width: 40%;
@@ -165,8 +193,18 @@ h1, h2, h3, h4, h5, h6 {
 .clear {
 	clear:both;
 }
+/* ---- //// END LOGIN WITH TWITTER STYLES ////---- */
 
-/*---- USER DETAILS ---- */
+
+
+
+
+
+
+
+
+
+/* ---- //// BEGIN USER DETAIL STYLES ////---- */
 
 header #header-left .profile {
 	background: none repeat scroll 0 0 #E28891;
@@ -217,5 +255,346 @@ header #header-left img#avatar {
 	border-top: 4px solid #64a3cf;
 }
 
+/* ---- //// END USER DETAIL STYLES ////---- */
+
+
+
+
+
+
+
+/* ---- //// BEGIN MENU STYLES //// ---- */
+
+.cbp-spmenu {
+	background: #72b9b5;
+	position: fixed;
+}
+
+.cbp-spmenu h3 {
+	color: #fff;
+	font-size: 1.9em;
+	padding: 0 0 20px 0;
+	margin: 0;
+	font-weight: 600;
+	background: #e28891;
+	
+}
+
+.cbp-spmenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 400;
+	font-family: 'Ubuntu', Arial, sans-serif;
+
+}
+
+.cbp-spmenu a:hover {
+	background: #64a3cf;
+}
+
+.cbp-spmenu a:active {
+	background: #e28891;
+	color: #fff;
+	font-family: 'Ubuntu', Arial, sans-serif;
+}
+
+/* ---- ORIENTATION-DEPENDANT STYLES FOR THE CONTENT OF THE MENU ---- */
+
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 85px;
+	z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+	border-bottom: 1px solid #72b9b5;
+	padding: 1em;
+}
+
+.cbp-spmenu-vertical a img {
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+
+.cbp-spmenu-horizontal {
+	width: 100%;
+	height: 150px;
+	left: 0;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+	height: 100%;
+	width: 20%;
+	float: left;
+}
+
+.cbp-spmenu-horizontal a {
+	float: left;
+	width: 20%;
+	padding: 0.8em;
+	border-left: 1px solid #72b9b5;
+}
+
+/* ---- VERTICAL MENU THAT SLIDES FROM LEFT OR RIGHT ---- */
+
+.cbp-spmenu-left {
+	left: -240px;
+}
+
+.cbp-spmenu-right {
+	right: -240px;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+	left: 0px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+/* ---- HORIZONTAL MENU THAT SLIDES FRO THE TOP OR BOTTOM ----  */
+
+.cbp-spmenu-top {
+	top: -150px;
+}
+
+.cbp-spmenu-bottom {
+	bottom: -150px;
+}
+
+.cbp-spmenu-top.cbp-spmenu-open {
+	top: 350px;
+}
+
+.cbp-spmenu-bottom.cbp-spmenu-open {
+	bottom: 0px;
+}
+
+/* ---- PUSH CLASSES APPLIED TO THE BODY ---- */
+
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.cbp-spmenu-push-toright {
+	left: 240px;
+}
+
+.cbp-spmenu-push-toleft {
+	left: -240px;
+}
+
+/* ---- TRANSITIONS ---- */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	font-family: Lato, Calibri, Arial, sans-serif;
+}
+
+/* ---- //// END MENU STYLES ////---- */
+
+
+
+
+
+
+
+
+
+/* ---- //// BEGIN TWITTER FEED STYLES ////---- */
+
+#loading-container {
+    padding:16px 0px 16px 0px;
+    text-align:center;  
+}
+ 
+.tweets {
+    width:258px;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 60px 20px 0 0;
+    padding:8px 0px 5px 10px;
+    border-radius:12px;
+    background-color:#FFF;
+    color:#333;
+    overflow:auto;
+	float: left;
+}
+ 
+.tweets-feed h1 {
+    color:#5F5F5F;
+    margin:0px;
+    padding:9px 0px 9px 0px;
+    font-size:18px;
+    font-weight:lighter;    
+}
+ 
+.twitter-article, #loading-container {
+    width:258px;
+    border-top:1px dotted #CCC;
+    float:left; 
+    padding:8px 0px 8px 0px;
+}
+ 
+.twitter-pic {
+    float:left;
+}
+ 
+.twitter-pic img {
+    float:left;
+    border-radius:7px;  
+    border:none;
+     
+}
+ 
+/* -------- TEXT STYLING ------*/
+
+.twitter-text {
+    width:194px;
+    float:left;
+    font-size:11px;
+    padding-left: 11px;
+}
+.twitter-text p {
+    margin:0px;
+    line-height:15px;   
+}
+.twitter-text a,  h1 a {
+    color: #00acee;
+    text-decoration: none;
+}
+.twitter-text a:hover,  h1 a:hover {
+    text-decoration: underline;
+    color: #00acee;
+}
+ 
+.tweet-time {
+    font-size:10px;
+    color:#878787;
+    float:right;
+}
+.tweet-time a, .tweet-time a:hover {
+    color:#878787;
+}
+ 
+.tweetprofilelink a {
+    color:#444;
+}
+.tweetprofilelink a:hover {
+    color:#444;
+}
+ 
+/* -------- FEED  ACTIONS ------*/
+
+#twitter-actions {
+    width:75px;
+    float:right;
+    margin-right:5px;   
+    margin-top:3px;
+        display:none;
+}
+.intent {
+    width:25px;
+    height:16px;
+    float:left; 
+}
+.intent a{
+    width:25px;
+    height:16px;
+    display:block;
+    background-image:url(../images/tweet-actions.png);
+    float:left; 
+} 
+.intent a:hover{
+    background-position:-25px 0px;
+} 
+ 
+#intent-retweet a{
+    background-position:0px -17px;
+} 
+#intent-retweet a:hover{
+    background-position:-25px -17px;
+} 
+#intent-fave a{
+    background-position:0px -36px;
+} 
+#intent-fave a:hover{
+    background-position:-25px -36px;
+} 
+ 
+/* -------- RETWEET INDICATOR ------*/
+#retweet-indicator {
+    width:14px;
+    height:10px;
+    background-image:url(../images/tweet-actions.png);
+    background-position:-5px -54px;
+    margin-top:3px;
+    float:left;
+}
+
+.clear {
+	clear:both;
+}
+
+/* ---- //// END TWITTER FEED STYLES ////---- */
+
+
+
+
+
+
+
+
+
+
+
+/* ---- MEDIA SELECTORS ---- */
+
+@media screen and (max-width: 55.1875em){
+
+	.cbp-spmenu-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+
+	.cbp-spmenu-top {
+		top: -110px;
+	}
+
+	.cbp-spmenu-bottom {
+		bottom: -110px;
+	}
+
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 25%;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -350px;
+	}
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+}
 
 

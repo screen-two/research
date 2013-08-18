@@ -14,10 +14,8 @@
   });
   
   </script>
-  <link href="./css/default.css"  type="text/css" rel="stylesheet" />
-  <link  href="./css/component.css" type="text/css" rel="stylesheet"  />
-  <link href="./css/twitter-styles.css" rel="stylesheet" type="text/css" />
   <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/reset.css" rel="stylesheet" type="text/css" />
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
   <title>Screen&sup2;</title>
   </head>
@@ -37,9 +35,21 @@
             require_once('user-detail.php');
         }
         ?>
-        <a href="#"><img src="images/home.png" width="61" height="62">Home</a> <a href="#"><img src="images/notification.png" width="63" height="59">Notifications</a> <a href="#"><img src="images/trends.png" width="54" height="55">Trends</a> <a href="#"><img src="images/settings.png" width="53" height="52">Settings </a> </nav>
+        
+        <ul class="menu-items">
+            <li><a href="#"><img src="images/home.png" width="61" height="62">Home</a></li> 
+            <li><a href="#"><img src="images/notification.png" width="63" height="59">Notifications</a></li> 
+            <li><a href="#"><img src="images/trends.png" width="54" height="55">Trends</a> </li>
+            <li><a href="#"><img src="images/settings.png" width="53" height="52">Settings </a></li>
+        </ul>
+        <!-- END list menu-items -->
+        
+        </nav>
+        <!-- END nav cbp-spmenu-s1 -->
+        
       </div>
     <!-- END main-navigation --> 
+    
     
   </div>
     <!-- END header-left --> 
