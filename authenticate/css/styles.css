@@ -81,9 +81,10 @@ img  {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;  
-	font-weight: 600;
-	
+	font-weight: 600;	
 }
+
+
 
 .clear {
 	clear: both;
@@ -164,4 +165,55 @@ h1, h2, h3, h4, h5, h6 {
 .clear {
 	clear:both;
 }
+
+/*---- USER DETAILS ---- */
+
+header #header-left .profile {
+	background: none repeat scroll 0 0 #E28891;
+}
+
+header #header-left p {
+	text-align: center;
+	
+}
+
+header #header-left img#avatar {
+	-webkit-border-radius: 50%px;
+	-moz-border-radius: 50%px;
+	border-radius: 50%;
+	border: 2px solid #72B9B5;
+	width: 100px;
+	height: 100px;
+	
+}
+
+.counts {
+	margin: 0 4px;
+}
+
+.counts p {
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;  
+	font-weight: 400;
+	font-size: .9em;	
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 3px;
+}
+
+.counts span.number-of-tweets p {
+	border-top: 2px solid #72B9B5;
+}
+
+.counts span.number-following p {
+	border-top: 2px solid #e7995b;
+}
+
+
+.counts span.number-of-followers p {
+	border-top: 2px solid #64a3cf;
+}
+
+
 

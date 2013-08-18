@@ -1,44 +1,33 @@
 <?php
 
-	mysql_connect('localhost', 'root', 'root');  
-	mysql_select_db('screen2');  
+mysql_connect('mysql1859int.cp.blacknight.com', 'u1148707_screen2', 'Arch1p3lag0');  
+mysql_select_db('db1148707_screen2');  
 
-	require("twitteroauth/twitteroauth.php");  
-	session_start();
-	
-	if(!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empty($_SESSION['oauth_token_secret'])){  
-    // We've got everything we need  
-} else {  
+require("twitteroauth/twitteroauth.php");  
+session_start();
+
+
+
+if(empty($_GET['oauth_verifier']) || empty($_SESSION['oauth_token']) || empty($_SESSION['oauth_token_secret'])){  
     // Something's missing, go back to square 1  
     header('Location: twitter_login.php'); 
 	
 }
 
+$twitteroauth = new TwitterOAuth('oXRHpijPXqkmpI01vB3XKQ', 'EBxsXvSZaDeiN08kHHtWaiiZyiGOdpsIP0UGBwy2g', $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);  
 
+// Let's request the access token  
+$access_token = $twitteroauth->getAccessToken($_GET['oauth_verifier']); 
+// Save it in a session var 
+$_SESSION['access_token'] = $access_token; 
+// Let's get the user's info 
+$user_info = $twitteroauth->get('account/verify_credentials'); 
 
-
-
-
-
-	// TwitterOAuth instance, with two new parameters we got in twitter_login.php  
-	$twitteroauth = new TwitterOAuth('oXRHpijPXqkmpI01vB3XKQ', 'EBxsXvSZaDeiN08kHHtWaiiZyiGOdpsIP0UGBwy2g', $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);  
-	// Let's request the access token  
-	$access_token = $twitteroauth->getAccessToken($_GET['oauth_verifier']); 
-	// Save it in a session var 
-	$_SESSION['access_token'] = $access_token; 
-	// Let's get the user's info 
-	$user_info = $twitteroauth->get('account/verify_credentials'); 
-	// Print user's info  
-	print_r($user_info); 
 	
 	
 	
-	
-	
-	
-	
-	if(isset($user_info->error)){  
-    // Something's wrong, go back to square 1  
+if(isset($user_info->error)){  
+// Something's wrong, go back to square 1  
     header('Location: twitter_login.php'); 
 } else { 
     // Let's find the user by its ID  
@@ -52,9 +41,10 @@
         $result = mysql_fetch_array($query);  
     } else {  
         // Update the tokens  
-        $query = mysql_query("UPDATE users SET oauth_token = '{$access_token['oauth_token']}', oauth_secret = '{$access_token['oauth_token_secret']}' WHERE oauth_provider = 'twitter' AND oauth_uid = {$user_info->id}");  
+        $query = mysql_query("UPDATE users SET oauth_token = '".$access_token['oauth_token']."', oauth_secret = '".$access_token['oauth_token_secret']."' WHERE oauth_provider = 'twitter' AND oauth_uid = {$user_info->id}");  
     }  
-  
+	echo 'result<br />';
+  print_r($result);
     $_SESSION['id'] = $result['id']; 
     $_SESSION['username'] = $result['username']; 
     $_SESSION['oauth_uid'] = $result['oauth_uid']; 
@@ -62,18 +52,21 @@
     $_SESSION['oauth_token'] = $result['oauth_token']; 
     $_SESSION['oauth_secret'] = $result['oauth_secret']; 
  
-    header('Location: twitter_update.php');  
+    header('Location: index.php');  
 }   
 
 
 
 if(!empty($_SESSION['username'])){  
     // User is logged in, redirect  
-    header('Location: twitter_update.php');  
-}  
+    header('Location: index.php');  
+} 
+
+echo '<br /><br />SESSION<br />';
+print_r($_SESSION);
+//header('Location: index.php'); 
  ?>
 
 
-<h2>OHai <?=(!empty($_SESSION['username']) ? '@' . $_SESSION['username'] : 'Guest'); ?></h2>
 
 
