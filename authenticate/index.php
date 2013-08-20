@@ -25,7 +25,7 @@
     
         <div class="menu-icon">
         <button id="showLeft"></button>
-      </div>
+      	</div>
       <!-- END menu-icon--> 
 
   </div>
@@ -58,13 +58,15 @@
         ?>
         
         <ul class="menu-items">
-            <li><a href="#"><img src="images/home.png" width="61" height="62">Home</a></li> 
-            <li><a href="#"><img src="images/notification.png" width="63" height="59">Notifications</a></li> 
-            <li><a href="#"><img src="images/trends.png" width="54" height="55">Trends</a> </li>
-            <li><a href="#"><img src="images/settings.png" width="53" height="52">Settings </a></li>
+            <li class="home"><a href="#">Home</a></li> 
+            <li class="notifications"><a href="#">Notifications</a></li> 
+            <li class="trending"><a href="#">Trends</a> </li>
+            <li class="settings"><a href="#">Settings </a></li>
         </ul>
         <!-- END list menu-items -->
-        
+        <div id="logout-wrapper">
+            <button id="logout">Logout</button>
+        </div>
    </nav>
         <!-- END nav cbp-spmenu-s1 -->
 </div>
@@ -76,18 +78,13 @@
 if(!empty($_SESSION['username'])){  ?>
 
     <div class="content-wrapper">
-    
-        <h2>OHai <?='@' . $_SESSION['username']; ?></h2> 
-        
-        
-    
         <div id="col-1" class="tweets">One</div>
         <div id="col-2" class="tweets">Two</div>
         <div id="col-3" class="tweets">Three</div>
-        
+        <div class="clear"></div>
     </div>
     <!-- END content-wrapper -->
-    <div class="clear"></div>
+    
 <?php 
 } else {
  ?>
