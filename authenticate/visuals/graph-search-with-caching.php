@@ -74,6 +74,8 @@ $meta = $tweets->{'search_metadata'};
 $next = $meta->{'next_results'};
 $max = 20;
 $last_tweet_id = $meta->{'max_id_str'};
+$meta->{'refresh_url'};
+
 while(isset($next) && $max > 0){
 	
 	$new_tweets = $connection->get("https://api.twitter.com/1.1/search/tweets.json".$next);
@@ -108,8 +110,8 @@ foreach ($status as $tweet){
 	$counts[$key] = $counts[$key] + 1;
 }	
 
-//update the last tweet id for this search
-$query = mysql_query(sprintf("UPDATE saved_search SET last_tweet_id  = '%s' WHERE saved_search_id = '%d'", $last_tweet_id, $search_id));
+//update the last tweet id and refresh_url for this search
+$query = mysql_query(sprintf("UPDATE saved_search SET last_tweet_id  = '%s', refresh_url = '%s' WHERE saved_search_id = '%d'", $last_tweet_id, $refesh_url, $search_id));
 
 
 //Save all of the counts (or update as needed)

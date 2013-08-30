@@ -54,7 +54,7 @@ $(document).ready(function () {
 		event.preventDefault();
 
 		
-		d3.tsv("http://digitalinc.ie/authenticate/visuals/graph-search.php?q=" + $('#s').val(), function(error, data) {
+		d3.tsv("http://digitalinc.ie/authenticate/visuals/graph-search-with-caching.php?q=" + $('#s').val(), function(error, data) {
 			  data.forEach(function(d) {
 				d.date = parseDate(d.date);
 				d.count = +d.count;
@@ -89,13 +89,16 @@ $(document).ready(function () {
 });
 </script>
 
-	<section id="content-wrapper">
+	<!--<section id="content-wrapper">
             
             <div class="search">
                 <input id="s" results=5 type="search" name="s" value="Type keyword and press enter to search" />
             </div>
+            
         <div class="clear"></div>
-    </section>
+        
+    </section>-->
+    
 
 
 </body>
