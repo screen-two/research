@@ -59,7 +59,7 @@ $radius = "100km";
 $status = array();
 
 if(isset($last_tweet_id) && !empty($last_tweet_id)) {
-	echo "since: ". $last_tweet_id . "\n";
+	//echo "since: ". $last_tweet_id . "\n";
 	$tweets = $connection->get("https://api.twitter.com/1.1/search/tweets.json?count=100&include_entities=0&since_id=" . $last_tweet_id . "&geocode=" . $latitude . "," . $longitude . "," . $radius . "&q=".$q);
 }
 else {
@@ -96,7 +96,7 @@ while(isset($next) && $max > 0){
 	$max -= 1;
 }
 
-echo "Found " . count($status) . " tweets in " . ( ( ( $max - 20 ) * -1 ) + 1 ). " iterations\n";
+//echo "Found " . count($status) . " tweets in " . ( ( ( $max - 20 ) * -1 ) + 1 ). " iterations\n";
 
 $counts = array();
 
@@ -141,7 +141,9 @@ $result = mysql_query($sql);
 
 echo "date\tcount\n";
 while ($row = mysql_fetch_assoc($result)) {	
-	echo $row['timestamp'] . "\t" . $row['count'] . "\n";
+	$date = date_parse( $row['timestamp'] );
+	$key = $date['year'] . '-' . $date['month'] . '-' . $date['day'];
+	echo $key . "\t" . $row['count'] . "\n";
 }
 ?>
 

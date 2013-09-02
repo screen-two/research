@@ -19,20 +19,21 @@ require_once("twitteroauth/twitteroauth.php"); //Path to twitteroauth library
 <section class="top-ten-searches">
     	<h1>Top-Ten Searches</h1>
         <ul>
-            <li><a href="graph-search-with-caching.php?q=picnic">picnic</a></li>
-            <li><a href="graph-search-with-caching.php?q=cats">cats</a></li>
-        	<li><a href="graph-search-with-caching.php?q=breakingbad">breakingbad</a></li>
-            <li><a href="graph-search-with-caching.php?q=school">school</a></li>
-            <li><a href="graph-search-with-caching.php?q=syria">syria</a></li>
-            <li><a href="graph-search-with-caching.php?q=ballyfermot">ballyfermot</a></li>
-            <li><a href="graph-search-with-caching.php?q=dublin">dublin</a></li>
-            <li><a href="graph-search-with-caching.php?q=jamieoliver">jamieoliver</a></li>
-            <li><a href="graph-search-with-caching.php?q=russia">russia</a></li>
-            <li><a href="graph-search-with-caching.php?q=jobbridge">jobbridge</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=picnic">picnic</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=cats">cats</a></li>
+        	<li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=breakingbad">breakingbad</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=school">school</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=syria">syria</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=ballyfermot">ballyfermot</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=dublin">dublin</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=jamieoliver">jamieoliver</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=russia">russia</a></li>
+            <li><a href="http://digitalinc.ie/authenticate/visuals/search-graph-working.php?q=jobbridge">jobbridge</a></li>
         </ul>
+        
+      
     
 </section>
-    
-    
+	  
 </body>
 </html>
