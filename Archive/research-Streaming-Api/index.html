@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Multiple Twitter Feeds</title>
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/twitterfeed.js"></script>
+<link href="./css/twitter-styles.css" rel="stylesheet" type="text/css" />
+
+<body>
+
+	<div id="twitter-feed-1" class="tweets"></div>
+    <div id="twitter-feed-2" class="tweets"></div>
+    <div id="twitter-feed-3" class="tweets"></div>
+    <div class="clear"></div>
+    
+    
+    <script type="text/javascript" >
+		$(document).ready(function () {
+			$('#twitter-feed-1').twitterFeed({
+				screenname: 'Digitalinc',
+				twitterprofile:'thisdigitalinc'
+				
+			});
+			
+			$('#twitter-feed-2').twitterFeed({
+				screenname: 'Digitalinc',
+				twitterprofile:'thisdigitalinc'
+				
+			});
+			
+			$('#twitter-feed-3').twitterFeed({
+				screenname: 'Digitalinc',
+				twitterprofile:'thisdigitalinc',
+				type: 'search',
+				q: 'dogs'
+				
+			});
+		});
+    
+    </script>
+
+</body>
+</html>

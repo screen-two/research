@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Tweet Template</title>
+<link href="search_client.css" type="text/css" rel="stylesheet" />
+<link href="tweet.css" type="text/css" rel="stylesheet" />
+<link href="styles.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<section id="menu">
+  <ul>
+    <li><a href="index.html" >Home</a></li>
+        	<li><a href="ajax_request.html" >Ajax Request</a></li>
+            <li><a href="timeline_request.html" >Timeline Request</a></li>
+            <li><a href="search_request.html" >Search Request</a></li>
+            <li><a href="search_client.html" >Search Client</a></li>
+            <li><a href="tweet_template.html" >Tweet Template</a></li>
+  </ul>
+</section>
+<div class="tweet">
+  <div class="tweet_left">
+    <div class="tweet_image"> <a href="https://twitter.com/[screen_name]"> <img src="[profile_image_url]"> </a> </div>
+  </div>
+  <div class="tweet_right">
+    <div class="tweet_triangle"></div>
+    <div class="tweet_row">
+      <div class="tweet_username"> <a href="https://twitter.com/[screen_name]" target="search">[screen_name]</a> <span class="tweet_name">[name]</span> </div>
+    </div>
+    <div class="tweet_row">
+      <div class="tweet_text">[tweet_text]</div>
+    </div>
+    <div class="tweet_row">
+      <div class="tweet_timestamp"> <img class="stream_bluebird" src="bird_16_blue.png"> <span class="retweets">[retweet_count] retweets</span> <a href="http://twitter.com/[screen_name]/status/[tweet_id]" target="search" class="tweet_time_link">[created_at]</a> <img src="reply.png" class="imageof_reply"> <a href="http://twitter.com/intent/tweet?in_reply_to=[tweet_id]" target="search">Reply</a> <img src="retweet.png" class="imageof_retweet"> <a href="http://twitter.com/intent/retweet?tweet_id=[tweet_id]" target="search">Retweet</a> <img src="favorite.png" class="imageof_favorite"> <a href="http://twitter.com/intent/favorite?tweet_id=[tweet_id]" target="search">Favorite</a> </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
