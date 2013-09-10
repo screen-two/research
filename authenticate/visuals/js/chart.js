@@ -8,45 +8,61 @@ var USE_CANVAS=!0;
 if("trydom"==window.location.hash||"#trydom"==window.location.hash)USE_CANVAS=!1;
 
 nytg.Chart=function(){
+	
 	function P(a){
+		
 		o.fillStyle=a.color;
+		
 		o.beginPath();
+		
 		o.arc(a.x,a.y,a.r,0,2*Math.PI);
+		
 		o.closePath();
+		
 		o.fill();
-		a.selected&&o.stroke()
+		
+		a.selected&&o.stroke() // --- Shouldn't this have a semi colon??
 	}
+	//END function p(a)
 	
 	var m=jQuery,x=m.browser.msie&&9>parseInt(m.browser.version,10),g=nytg.ipoData;
 	
 	if(x)m("#nytg-wrapper").hide(),m("#nytg-ie8-wrapper").show();
 	
-	else{
-		_.forEach(g,function(a){
+	else {
+		_.forEach(g,function(a) {
+			
 			var b=(""+a.fulldate).substr(0,4),c=(""+a.fulldate).substr(4,2),d=(""+a.fulldate).substr(6,2);
+			
 			a.date=new Date(b,c,d);a.threeYear=a.rMVMP*(a.BHRET3/100+1);
-			a.NAME=a.NAME.toUpperCase()
-		});
+			
+			a.NAME=a.NAME.toUpperCase() // --- Shouldn't this have a semi colon??
+			
+		});//END else
 		
-		for(var B=new Date(1975,1,0),J=d3.max(g,function(a){
+		for(var B=new Date(1975,1,0),J=d3.max(g,function(a) {
 		
 			return a.date
 
-		}),r=d3.max(g,function(a){return a.rMVOP}),Q=d3.time.scale().domain([B,J]).range([0,825]),t=d3.scale.linear().domain([0,5E3]).range([480,0]),C=d3.scale.log().domain([20,8E5]).range([480,0]),D=d3.scale.pow().exponent(0.5).clamp(!0).domain([0,r]).range([0,80]),E=d3.scale.linear().domain([B,J]).rangeRound(["rgba(255,0,0,0.4)","rgba(0,66,118,0.4)"]),K=[[255,0,0],[0,66,118]],E=function(a,b){
+		}),r=d3.max(g,function(a) {
+			
+				return a.rMVOP
+				
+		}),Q=d3.time.scale().domain([B,J]).range([0,825]),t=d3.scale.linear().domain([0,5E3]).range([480,0]),C=d3.scale.log().domain([20,8E5]).range([480,0]),D=d3.scale.pow().exponent(0.5).clamp(!0).domain([0,r]).range([0,80]),E=d3.scale.linear().domain([B,J]).rangeRound(["rgba(255,0,0,0.4)","rgba(0,66,118,0.4)"]),K=[[255,0,0],[0,66,118]],E=function(a,b){
 		
 			for(var c=(a-B)/(J-B),d=[],e=0;3>e;e++)d.push(Math.round(K[0][e]+c*(K[1][e]-K[0][e])));
 
 			d.push(b||0.7);
-			
+		
 			return"rgba("+d.join(",")+")"
 			
 		},p=USE_CANVAS?0:"px",h=function(a){
 		
-			a=D(a);
+				a=D(a);
 			
-			return isNaN(a)||null===a?0+p:Math.ceil(a)+p
+				return isNaN(a)||null===a?0+p:Math.ceil(a)+p
 			
-		},q=function(a,b){
+			},q=function(a,b){
 			
 				return isNaN(a[b])?0+p:Math.round(Q(a.date)-D(a[b])/2)+p
 			
@@ -80,6 +96,8 @@ nytg.Chart=function(){
 			
 			}
 			
+			//END for loop
+			
 			if(!x)var u=d3.select("#nytg-canvas").append("div").attr("class","nytg-stage").style("width","950px").style("height","500px").style("left","75px").style("top","0px"),V=u.append("div").attr("class","nytg-circleContainer").style("width","875px").style("height","480px"),L=d3.select("#nytg-canvas").append("svg").attr("width",950).attr("height",500).style("position","absolute").append("g").attr("transform","translate(75,0)");
 			
 			if(USE_CANVAS){
@@ -95,14 +113,19 @@ nytg.Chart=function(){
 				var o=v.getContext("2d");o.lineWidth=2
 			
 			}
+			//END if (USE_CANVAS) statement
 			
-			if(!x){
+			if(!x) {
 				
 				var j=d3.svg.axis().scale(t).tickFormat(function(a){
 				
 					return a/1E3
 					
-				}).tickSize(15).orient("left");L.append("g").attr("class","y axis").call(j);
+				}).tickSize(15).orient("left");
+				
+				
+				L.append("g").attr("class","y axis").call(j);
+				
 				
 				r=d3.svg.axis().scale(Q).tickFormat(function(a){
 				
@@ -112,117 +135,147 @@ nytg.Chart=function(){
 				
 				L.append("g").attr("class","x axis").attr("transform","translate(0, 480)").call(r)
 				
-				}
+			}
+			//END if (!x) statement
+			
+			if(USE_CANVAS){
 				
-				if(USE_CANVAS){
+				var z=m(v).offset(),k=-1,w=!1;
+				
+				m(window).mousemove(function(a){
 					
-					var z=m(v).offset(),k=-1,w=!1;
+					var b=a.pageX-z.left,c=a.pageY-z.top,d=0,e=-1;
 					
-					m(window).mousemove(function(a){
-						var b=a.pageX-z.left,c=a.pageY-z.top,d=0,e=-1;
+					if(c<=M&&0<c)
+					
+					for(var h=0,f=g.length;h<f;h++){
+					
+						var l,i=g[h];
 						
-						if(c<=M&&0<c)for(var h=0,f=g.length;h<f;h++){
+						l=b-i.x;
+							
+						var n=c-i.y;
 						
-							var l,i=g[h];
-							
-							l=b-i.x;
-							
-							var n=c-i.y;
-							
-							l=Math.sqrt(l*l+n*n);n=i=i.r;
-							
-							3>n&&(n=3);
-							
-							var j=0;
-							
-							l<n?(n+=1*l,j=1E3-n):l<i+10&&(j=10+i-l);
-							
-							l=j;
-							
-							l>d&&(d=l,e=h)}if(!w&&k!=e||w&&-1<e)-1<k&&delete g[k].selected,-1<e?(g[e].selected=!0,S(g[e])):w||s.hide(),k=e,w=!1,G();
-							
-							w||s.css({
-							
-								top:a.pageY-N-18,left:a.pageX-0.5*O
-							})
-						});
-							
-						m(window).mouseenter(function(){
+						l=Math.sqrt(l*l+n*n);n=i=i.r;
 						
-							s.hide()
-						});
+						3>n&&(n=3);
 						
-						nytg.selectBubbleById=function(a){
+						var j=0;
 						
-							if(a!=k){
+						l<n?(n+=1*l,j=1E3-n):l<i+10&&(j=10+i-l);
+						
+						l=j;
+						
+						l>d&&(d=l,e=h)
 							
-								-1<k&&(console.log("clearSelectedBubble()"),console.log(g[k]),delete g[k].selected,k=-1);
-								
-								k=a;
-								
-								a=g[k];
-								
-								a.selected=!0;
-								
-								G();
-								
-								var b=a.x+z.left,c=a.y+z.top;S(a);
-								
-								s.css({top:c-N-18,left:b-0.5*O
-								
+					}
+					//END for loop
+						
+					if(!w&&k!=e||w&&-1<e)-1<k&&delete g[k].selected,-1<e?(g[e].selected=!0,S(g[e])):w||s.hide(),k=e,w=!1,G();
+						
+						w||s.css({
+						
+							top:a.pageY-N-18,left:a.pageX-0.5*O
+							
+						})
+					});
+					//END if statement
+							
+					m(window).mouseenter(function(){
+					
+						s.hide()
+						
+					});
+					//END mouseenter function
+						
+					nytg.selectBubbleById=function(a){
+					
+						if(a!=k){
+						
+							-1<k&&(console.log("clearSelectedBubble()"),console.log(g[k]),delete g[k].selected,k=-1);
+							
+							k=a;
+							
+							a=g[k];
+							
+							a.selected=!0;
+							
+							G();
+							
+							var b=a.x+z.left,c=a.y+z.top;S(a);
+							
+							s.css({top:c-N-18,left:b-0.5*O
+							
 							});
 							
 							w=!0
 							
-						}};
+						}
+					};
+					//END if selectBubbleById function
 						
-						var s=$jq("<div>").addClass("nytg-popup").hide().appendTo("body"),O=0,N=0,S=function(a){
+					var s=$jq("<div>").addClass("nytg-popup").hide().appendTo("body"),O=0,N=0,S=function(a){
 							
-							z=m(v).offset();
-							
-							s.html(W(a)).show();
-							
-							N=s.outerHeight();
-							
-							O=s.outerWidth()
+						z=m(v).offset();
 						
-						},T=d3.format("+,.0f"),X=d3.format(",.0f"),Y=d3.format(",.1f"),W=function(a){
+						s.html(W(a)).show();
 						
-							var b=a.rMVOP,c=a.BHRET3,d=100*(a.rMVMP/b-1),e=a.fulldate,g=20080101>e?"Three years<br>later":"Return<br>to date",f=" million";
+						N=s.outerHeight();
+						
+						O=s.outerWidth()
+						
+					},T=d3.format("+,.0f"),X=d3.format(",.0f"),Y=d3.format(",.1f"),W=function(a){
+						
+						var b=a.rMVOP,c=a.BHRET3,d=100*(a.rMVMP/b-1),e=a.fulldate,g=20080101>e?"Three years<br>later":"Return<br>to date",f=" million";
 							
-							1E3<b&&(f=" billion",b/=1E3);
+						1E3<b&&(f=" billion",b/=1E3);
 							
-							var b="$"+(10>b?Y(b):X(b)),d=T(d)+"%",c=T(c)+"%",e=(""+e).substr(0,4),h=a.NAME,a="facebook"==h.toLowerCase(),e="<div class='nytg-popup-label'>"+e+"</div>"+("<div class='nytg-popup-title'>"+h+"</div>");
+						var b="$"+(10>b?Y(b):X(b)),d=T(d)+"%",c=T(c)+"%",e=(""+e).substr(0,4),h=a.NAME,a="facebook"==h.toLowerCase(),e="<div class='nytg-popup-label'>"+e+"</div>"+("<div class='nytg-popup-title'>"+h+"</div>");
 							
-							return e=a?e+"<div class='nytg-popup-line'><span class='nytg-popup-label'>Value at I.P.O.</span><br/><span class='nytg-popup-value'>$104 billion</span></div>":e+("<div class='nytg-popup-line'><span class='nytg-popup-label'>Value at I.P.O.</span><span class='nytg-popup-value'>"+
+						return e=a?e+"<div class='nytg-popup-line'><span class='nytg-popup-label'>Value at I.P.O.</span><br/><span class='nytg-popup-value'>$104 billion</span></div>":e+("<div class='nytg-popup-line'><span class='nytg-popup-label'>Value at I.P.O.</span><span class='nytg-popup-value'>"+
 b+f+"</span></div>")+"<table>"+("<tr><td class='row1'>"+d+"</td><td class='row1 col2'>"+c+"</td></tr>")+("<tr><td class='row2'>First day<br>change</td><td class='row2 col2'>"+g+"</td></tr></table>")
 
-						};
+					};
+					//END popup function
 						
-						_.forEach(nytg.ipoLabels,function(a){
+					_.forEach(nytg.ipoLabels,function(a){
 						
 						var b={
+					
+						width:a.width+"px",left:a.xpos+"px",top:a.ypos+"px"
 						
-							width:a.width+"px",left:a.xpos+"px",top:a.ypos+"px"
 						},b=$jq("<div>").addClass("nytg-ipo-label").css(b).html(a.sentence).hide().appendTo("#nytg-canvas");
+					
+						a.element=b[0]
+					});
+					//END forEach
+					
+					var Z=function(a){
 						
-						a.element=b[0]});
+						_.forEach(nytg.ipoLabels,function(b){
+							
+						a==b.step&&$jq(b.element).fadeIn(200)
 						
-						var Z=function(a){
-							_.forEach(nytg.ipoLabels,function(b){
-								a==b.step&&$jq(b.element).fadeIn(200)
-							})
-						},
+					})
+					//END function(a)
+						
+				},
 
 			$=function(){
 
-		_.forEach(nytg.ipoLabels,function(a){
+				_.forEach(nytg.ipoLabels,function(a){
 			
-			$jq(a.element).fadeOut(200)
+				$jq(a.element).fadeOut(200)
 			
-		})
+			})
+			//END mousemove function
+		}
+		//END if (USE_CANVAS) statement
 	}
-}
+	//END 
+
+
+
 
 var H=function(a,b,c,d){
 
@@ -233,6 +286,7 @@ var H=function(a,b,c,d){
 	a-=2;
 	
 	return c/2*(a*a*a+2)+b
+	
 },G=function(){
 
 	o.clearRect(0,0,R,M);
@@ -246,8 +300,12 @@ var H=function(a,b,c,d){
 		var d=g[b];
 		
 		d.selected?a=d:P(d)
+		
 	}a&&P(a)
+	//END function
+	
 },I=null,A=function(a,b){
+	
 	I&&cancelAnimationFrame(I);
 	
 		for(var c=b?F:y,d=g[g.length-1],e=0,i=g.length;e<i;e++){
@@ -268,6 +326,7 @@ var H=function(a,b,c,d){
 
 			f==d&&(f.startA=f.a,f.deltaA=0.7-f.a)
 		}
+		//END for loop
 		
 		var j=Date.now(),k=function(){
 		
@@ -283,7 +342,7 @@ var H=function(a,b,c,d){
 				
 				b==d&&(b.a=H(a,b.startA,b.deltaA,3E3),b.color=E(b.date,b.a))
 				
-			}G();
+			}G(); //END 
 			
 			3E3>a&&(I=requestAnimationFrame(k,v))
 			

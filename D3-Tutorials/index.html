@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3 Little Circles</title>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+<!--<link href="css/styles.css" rel="stylesheet" type="text/css" />-->
+</head>
+
+<body>
+
+
+
+<h1 id='three_little_circles'>Three Little Circles</h1>
+<style type='text/css'>
+
+.chart {
+  background: #fff;
+  border: solid 1px #ddd;
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  font: 10px sans-serif;
+  height: 180px;
+  position: relative;
+  width: 720px;
+}
+
+.chart svg {
+  border-left: solid 2px #ddd;
+  left: 360px;
+  position: absolute;
+  top: 0;
+}
+
+.chart pre {
+  font: 12px monospace;
+  height: 60px;
+  left: 10px;
+  position: absolute;
+  top: 0;
+  width: 340px;
+}
+
+.chart circle.little {
+  fill: #aaa;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+.chart button {
+  left: 275px;
+  position: absolute;
+  top: 145px;
+  width: 80px;
+}
+
+.chart .data rect {
+  fill: #eee;
+  stroke: #ccc;
+}
+
+</style><script type='text/javascript'>
+var data = [32, 57, 112],
+    dataEnter = data.concat(293),
+    dataExit = data.slice(0, 2),
+    w = 360,
+    h = 180,
+    x = d3.scale.ordinal().domain([57, 32, 112]).rangePoints([0, w], 1),
+    y = d3.scale.ordinal().domain(data).rangePoints([0, h], 2);
+</script>
+
+
+
+<div class='chart' id='chart-2'>
+
+<button>Run</button>
+</div><script type='text/javascript'>
+(function() {
+  var svg = d3.select("#chart-2").append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
+  svg.selectAll(".little")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "little")
+      .attr("cx", x)
+      .attr("cy", y)
+      .attr("r", 12);
+
+  d3.select("#chart-2 button").on("click", function() {
+    svg.selectAll(".select").remove();
+
+    svg.selectAll(".select")
+        .data(data)
+      .enter().append("circle")
+        .attr("class", "select")
+        .attr("cx", x)
+        .attr("cy", y)
+        .attr("r", 60)
+        .style("fill", "none")
+        .style("stroke", "red")
+        .style("stroke-opacity", 1e-6)
+        .style("stroke-width", 3)
+      .transition()
+        .duration(750)
+        .attr("r", 12)
+        .style("stroke-opacity", 1);
+  });
+})();
+</script>
+
+<div class='chart' id='chart-3'>
+<pre class='code'>
+circle.style("fill", "steelblue");
+circle.attr("cy", 90);
+circle.attr("r", 30);
+</pre>
+<button>Run</button>
+</div><script type='text/javascript'>
+(function() {
+  var svg = d3.select("#chart-3").append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
+  var circle = svg.selectAll(".little")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "little")
+      .attr("cx", x)
+      .attr("cy", y)
+      .attr("r", 12);
+
+  d3.select("#chart-3 button").on("click", function() {
+    circle.style("fill", "#aaa").attr("r", 12).attr("cy", y);
+    circle.transition().duration(500).delay(0).style("fill", "steelblue");
+    circle.transition().duration(500).delay(500).attr("cy", 90);
+    circle.transition().duration(500).delay(1000).attr("r", 30);
+  });
+})();
+</script>
+
+</body>
+</html>
