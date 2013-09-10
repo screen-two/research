@@ -8,8 +8,8 @@
 * @license GNU Public License
 * @version BETA 0.20
 */
-  $db_host = '';
-  $db_user = '';
-  $db_password = '';
-  $db_name = ''; 
+  $db_host = 'https://cp.blacknight.com/phpmyadmin/446/';
+  $db_user = 'u1148707_admin';
+  $db_password = 'D0yl3r09';
+  $db_name = 'db1148707_screen_2_visual'; 
 ?> 

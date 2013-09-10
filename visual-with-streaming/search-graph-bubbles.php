@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Tweet Graph</title>
+<title>Bubble Graph</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 <link href="css/graph-styles.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
@@ -17,7 +17,7 @@
 <script>
 
 
-//Begin visualisation -- Line Graph
+//Begin visualisation -- Bubble Graph
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -50,9 +50,8 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
 function updateChart (query){
-		//----- HERE IS WHERE OUR PROBLEM BEGINS ------//
 	
-	d3.tsv("http://digitalinc.ie/authenticate/visuals/graph-search-with-caching.php?q=" + query, function(error, data) {
+	d3.tsv("http://digitalinc.ie/visual-with-streaming/graph-search-with-caching.php?q=" + query, function(error, data) {
 			  data.forEach(function(d) {
 				d.date = parseDate(d.date);
 				d.count = +d.count;

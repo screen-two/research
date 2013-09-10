@@ -5,7 +5,7 @@
 header('Content-type: text/plain');
 
 session_start();
-require_once("twitteroauth/twitteroauth.php"); //Path to twitteroauth library
+require_once("streaming-api/libraries/phirehose/OauthPhirehose.php"); //Path to phirehose library
 
 $q="";
 
@@ -15,8 +15,8 @@ if( isset($_GET) && isset($_GET['q']) ){
 	die('no params provided');
 }
 
-mysql_connect('mysql1859int.cp.blacknight.com', 'u1148707_screen2', 'Arch1p3lag0');  
-mysql_select_db('db1148707_screen2');  
+mysql_connect('mysql1995.cp.blacknight.com', 'u1148707_admin', 'D0yl3r09');  
+mysql_select_db('db1148707_screen_2_visual');  
 
 $search_id = 0;
 

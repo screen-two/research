@@ -54,7 +54,7 @@ $(document).ready(function () {
 		event.preventDefault();
 
 		
-		d3.tsv("http://digitalinc.ie/authenticate/visuals/graph-search.php?q=" + $('#s').val(), function(error, data) {
+		d3.tsv("http://digitalinc.ie/visual-with-streaming/graph-search-with-caching.php?q=" + $('#s').val(), function(error, data) {
 			  data.forEach(function(d) {
 				d.date = parseDate(d.date);
 				d.count = +d.count;
@@ -95,6 +95,19 @@ $(document).ready(function () {
                 <input id="s" results=5 type="search" name="s" value="Type keyword and press enter to search" />
             </div>
         <div class="clear"></div>
+        
+        
+        <div class="borg">
+            <object width="32" height="32" class="hark_player">
+                <param name="movie" value="http://cdn.hark.com/swfs/player_32x32.swf?pid=nfsndxsfnt"/>
+                <param name="allowscriptaccess" value="always"/>
+                <param name="allownetworking" value="all"/>
+                <param name="wmode" value="transparent"/>
+                <embed src="http://cdn.hark.com/swfs/player_32x32.swf?pid=nfsndxsfnt" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all" width="32" height="32" wmode="transparent"></embed>
+    		</object><br/>
+    
+
+	</div>
     </section>
     
     
