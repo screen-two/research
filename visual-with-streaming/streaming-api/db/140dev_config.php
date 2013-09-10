@@ -10,13 +10,13 @@
 * @version BETA 0.20
 */
 // Directory for db_config.php 
-define('DB_CONFIG_DIR', 'digitalinc.ie/visual-with-streaming/streaming-api/db/'); 
+define('DB_CONFIG_DIR', '/wwwroot/digitalinc.ie/visual-with-streaming/streaming-api/db/'); 
 
 // Server path for scripts within the framework to reference each other 
-define('CODE_DIR', 'digitalinc.ie/visual-with-streaming/streaming-api/'); 
+define('CODE_DIR', '/wwwroot/digitalinc.ie/visual-with-streaming/streaming-api/'); 
 
 // External URL for Javascript code in browsers to call the framework with Ajax 
-define('AJAX_URL', 'http://digitalinc.ie/visual-with-streaming/streaming-api/db/'); 
+define('AJAX_URL', 'http://digitalinc.ie/visual-with-streaming/streaming-api/'); 
 
 
 

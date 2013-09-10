@@ -5,7 +5,7 @@
 header('Content-type: text/plain');
 
 session_start();
-require_once("streaming-api/libraries/phirehose/OauthPhirehose.php"); //Path to phirehose library
+require_once("twitteroauth/twitteroauth.php"); //Path to twitteroauth library
 
 $q="";
 
@@ -15,8 +15,8 @@ if( isset($_GET) && isset($_GET['q']) ){
 	die('no params provided');
 }
 
-mysql_connect('mysql1995.cp.blacknight.com', 'u1148707_admin', 'D0yl3r09');  
-mysql_select_db('db1148707_screen_2_visual');  
+mysql_connect('mysql1859int.cp.blacknight.com', 'u1148707_screen2', 'Arch1p3lag0');  
+mysql_select_db('db1148707_screen2');  
 
 $search_id = 0;
 
@@ -134,7 +134,7 @@ foreach ($counts as $date => $count)
 	}
 }
 
-///Grab the last 1 week of history for this search
+//Grab the last 1 week of history for this search
 $sql = sprintf("SELECT * FROM saved_search_history WHERE saved_search_id = '%d' AND timestamp >= DATE_SUB(CURDATE(), INTERVAL 1 WEEK) ORDER BY timestamp DESC", $search_id);
 $result = mysql_query($sql);  
 //$result = mysql_fetch_array($query);

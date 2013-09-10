@@ -8,6 +8,7 @@
 * @license GNU Public License
 * @version BETA 0.20
 */
+echo "dir1: " . DB_CONFIG_DIR;
 class db
 {
   public $dbh;
@@ -16,7 +17,9 @@ class db
   
   // Create a database connection for use by all functions in this class
   function __construct() {
-
+	echo "dir2: " . DB_CONFIG_DIR . 'db_config.php';
+	
+	//PROBLEM STARTS HERE
     require(DB_CONFIG_DIR . 'db_config.php');
     
     if($this->dbh = mysqli_connect($db_host, 
@@ -34,7 +37,7 @@ class db
       $this->error_msg = 'Unable to connect to DB';
       $this->log_error('__construct','attempted connection to ' . $db_name);
     }
-        
+       
     date_default_timezone_set(TIME_ZONE);
   }
   

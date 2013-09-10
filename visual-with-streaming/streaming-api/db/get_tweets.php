@@ -1,4 +1,5 @@
 <?php
+
 /**
 * get_tweets.php
 * Collect tweets from the Twitter streaming API
@@ -8,9 +9,11 @@
 * @license GNU Public License
 * @version BETA 0.20
 */
+
 require_once('./140dev_config.php');
 
-require_once(CODE_DIR . 'libraries/phirehose/Phirehose.php');
+require_once(CODE_DIR . 'libraries/phirehose/phirehose.php');
+
 require_once(CODE_DIR . 'libraries/phirehose/OauthPhirehose.php');
 class Consumer extends OauthPhirehose
 {
@@ -46,7 +49,7 @@ $stream->db_connect();
 // The keywords for tweet collection are entered here as an array
 // More keywords can be added as array elements
 // For example: array('recipe','food','cook','restaurant','great meal')
-$stream->setTrack(array('tunafish','cork'));
+$stream->setTrack(array('breakingbad','Xfactor'));
 
 // Start collecting tweets
 // Automatically call enqueueStatus($status) with each tweet's JSON data

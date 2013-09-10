@@ -1,13 +1,25 @@
 <?php
-    $username = ""; 
-    $password = "";   
-    $host = "";
-    $database="";
+    $username = "u1148707_admin"; 
+    $password = "D0yl3r09";   
+    $host = "mysql1995int.cp.blacknight.com";
+    $database="db1148707_screen_2_visual";
     
     $server = mysql_connect($host, $username, $password);
     $connection = mysql_select_db($database, $server);
+	
+	$q="";
 
- $myquery = "SELECT  tweet_text, created_at FROM  `tweets`";
+	if( isset($_GET) && isset($_GET['q']) ){
+		$q=$_GET['q'];
+	} else {
+		die('no params provided');
+	}
+
+ 	$myquery = sprintf("SELECT tt.tag, count(t.tweet_id), DATE_FORMAT(t.created_at, '%%j') FROM `tweets` AS t
+		INNER JOIN tweet_tags AS tt
+		ON tt.tweet_id = t.tweet_id
+		WHERE tt.tag='%s' 
+		GROUP BY DATE_FORMAT(t.created_at, '%%j')" , mysql_real_escape_string($q));
     $query = mysql_query($myquery);
     
     if ( ! $myquery ) {
