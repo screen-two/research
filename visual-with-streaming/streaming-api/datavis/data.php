@@ -1,8 +1,8 @@
 <?php
-    $username = "u1148707_admin"; 
-    $password = "D0yl3r09";   
-    $host = "mysql1995int.cp.blacknight.com";
-    $database="db1148707_screen_2_visual";
+    $username = ""; 
+    $password = "";   
+    $host = "";
+    $database="";
     
     $server = mysql_connect($host, $username, $password);
     $connection = mysql_select_db($database, $server);

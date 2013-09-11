@@ -8,7 +8,7 @@
 * @license GNU Public License
 * @version BETA 0.20
 */
-  $db_host = 'mysql1995int.cp.blacknight.com';
+  $db_host = 'mysql1995.cp.blacknight.com';
   $db_user = 'u1148707_admin';
   $db_password = 'D0yl3r09';
   $db_name = 'db1148707_screen_2_visual'; 

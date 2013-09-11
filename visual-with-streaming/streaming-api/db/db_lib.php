@@ -17,10 +17,10 @@ class db
   
   // Create a database connection for use by all functions in this class
   function __construct() {
-	echo "dir2: " . DB_CONFIG_DIR . 'db_config.php';
+	echo "dir2: " . DB_CONFIG_DIR . './db_config.php';
 	
 	//PROBLEM STARTS HERE
-    require(DB_CONFIG_DIR . 'db_config.php');
+    require(DB_CONFIG_DIR . './db_config.php');
     
     if($this->dbh = mysqli_connect($db_host, 
       $db_user, $db_password, $db_name)) { 

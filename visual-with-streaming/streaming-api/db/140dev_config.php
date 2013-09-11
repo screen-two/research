@@ -28,10 +28,10 @@ define('OAUTH_TOKEN','1615587769-mhzmHR2bWQVlueppiW1mjwkrGMdGdw4qmoC6IMU');
 define('OAUTH_SECRET','AcKfb0CjRi3mun0dpFQAhubh4Br8hLmlwac8G4IDJE');
 
 // MySQL time zone setting to normalize dates
-define('TIME_ZONE','Ireland/Dublin');
+define('TIME_ZONE','America/New_York');
 
 // Settings for monitor_tweets.php
 define('TWEET_ERROR_INTERVAL',10);
 // Fill in the email address for error messages
-define('TWEET_ERROR_ADDRESS','siobhan@digitalinc.ie');
+define('TWEET_ERROR_ADDRESS','siobhan.schnittger@gmail.com');
 ?>
