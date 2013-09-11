@@ -54,7 +54,7 @@ $(document).ready(function () {
 		event.preventDefault();
 
 		
-		d3.tsv("http://digitalinc.ie/visual-with-streaming/graph-search-with-caching.php?q=" + $('#s').val(), function(error, data) {
+		d3.tsv("http://dechasamediablog.com/140dev/datavis/data2.php?q=", function(error, data) {
 			  data.forEach(function(d) {
 				d.date = parseDate(d.date);
 				d.count = +d.count;

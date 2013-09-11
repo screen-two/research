@@ -42,9 +42,9 @@ var svg = d3.select("body").append("svg")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
 function updateChart (query){
-		//----- HERE IS WHERE OUR PROBLEM BEGINS ------//
+		
 	
-	d3.tsv("http://digitalinc.ie/authenticate/visuals/graph-search-with-caching.php?q=" + query, function(error, data) {
+	d3.tsv("http://digitalinc.ie/visual-with-search/graph-search-with-caching.php?q=" + query, function(error, data) {
 		data.forEach(function(d) {
 			d.date = parseDate(d.date);
 			d.count = +d.count;
