@@ -54,7 +54,7 @@ $connection = getConnectionWithAccessToken($consumerkey, $consumersecret, $acces
 
 $latitude = "53.339381";
 $longitude = "-6.260533";
-$radius = "100km";
+$radius = "1000km";
 
 $status = array();
 
