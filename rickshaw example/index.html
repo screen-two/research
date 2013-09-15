@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Interactive Graph </title>
+		<link type="text/css" rel="stylesheet" href="styles/rickshaw.min.css" />
+		<link type="text/css" rel="stylesheet" href="styles/screen.css" />
+		<script src="scripts/d3.min.js"></script>
+		<script src="scripts/d3.layout.min.js"></script>
+		<script src="scripts/rickshaw.min.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Interactive Graph Demo</h1>
+		</div>
+		<div id="container">
+			<div id="chart_container">
+				<div id="y_axis"></div>
+				<div id="chart"></div>
+				<div id="legend"></div>
+				<form id="offset_form" class="toggler">
+					<p>Display chart as:</p>
+					<input type="radio" name="offset" id="lines" value="lines" checked="checked" />
+					<label class="lines" for="lines">lines</label><br>
+					<input type="radio" name="offset" id="bar" value="zero" />
+					<label class="stack" for="stack">bar</label>
+				</form>
+			</div>
+			<h2>Taxation as percentage of GDP 1965 - 1976</h2>
+			<p style="text-indent:40px;">Source: OECD (<a href="http://www.oecd.org/ctp/taxpolicyanalysis/revenuestatisticstaxratioschangesbetween1965and20102012edition.htm" title="View source">http://www.oecd.org/ctp/taxpolicyanalysis/revenuestatisticstaxratioschangesbetween1965and20102012edition.htm</a>)</p>
+		</div>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>

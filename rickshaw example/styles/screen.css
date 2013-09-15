@@ -1,0 +1,73 @@
+
+	body {
+		background:		#efefef;
+		margin:			0;
+		padding:		0;
+		font-family: 	Helvetica, Arial, sans-serif;
+		font-size:		62.5%;
+		color:			#4a4a4a;
+	}
+
+	#header {
+		position:		relative;
+		width:			920px;
+		margin:			auto;
+		padding:		20px;
+		background:		#fff;
+		box-shadow:		0px 0px 10px #999;	
+		border:			1px solid #999;
+		margin-top:		20px;
+		border-radius: 	10px;			
+	}
+
+	#container {
+		position:		relative;
+		width:			920px;
+		margin:			auto;
+		padding:		20px;
+		background:		#fff;
+		box-shadow:		0px 0px 10px #999;	
+		border:			1px solid #999;
+		margin-top:		20px;
+		border-radius: 	10px;
+	}
+	
+	h1, h2 {
+		font-weight:	normal;
+		text-transform:	uppercase;
+		margin:			0;
+		padding:		0;
+	}
+	
+	h1 {
+		font-size:		2.5em;
+	}
+	
+	h2 {
+		font-size:		2em;
+		text-indent:	40px;
+	}
+
+	#chart_container {
+			display: 	inline-block;
+	}
+	
+	#chart {
+			float: 		left;
+	}
+	
+	#legend {
+			float: 		left;
+			margin-left: 15px;
+	}
+	
+	#offset_form {
+			float: 		left;
+			margin: 	2em 0 0 15px;
+			font-size: 13px;
+	}
+	
+	#y_axis {
+			float: 		left;
+			width: 		40px;
+	}
