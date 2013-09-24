@@ -1,8 +1,8 @@
 <?php
-     $username = "ronnie_dev140"; 
-    $password = "140pass123";   
-    $host = "mysql.host.ie";
-    $database="ronnie_dev140";
+     $username = "DB USER NAME"; 
+    $password = "DB PASSWORD";   
+    $host = "DB HOSTNAME";
+    $database="DB NAME";
     
     $server = mysql_connect($host, $username, $password);
     $connection = mysql_select_db($database, $server);
